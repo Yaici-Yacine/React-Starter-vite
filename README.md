@@ -24,7 +24,7 @@ or
 ```bash
   cd React-Starter-vite
 ```
- - add permision
+ - add permission
 ```bash
   chmod +x inst.sh 
 ```
@@ -34,12 +34,12 @@ or
 
 ## How to use
 ```bash
-  #get info haw to use
+  #get info how to use
   react -h 
-  # create a projet react with javascript
+  # create a project react with javascript
   react -j example
-  # create a projet react with typescript
+  # create a project react with typescript
   react -t example
-  #create a projet react with typescript and insall packages
+  #create a project react with typescript and insall packages
   react -t example -i "sass axios ..."
 ```
