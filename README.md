@@ -40,6 +40,6 @@ or
   react -j example
   # create a projet react with typescript
   react -t example
-  #create a projet react with typescript and insall depandasis
+  #create a projet react with typescript and insall packages
   react -t example -i "sass axios ..."
 ```
