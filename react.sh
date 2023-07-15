@@ -72,19 +72,3 @@ case "$script" in
     ouvrirTs
     ;;
 esac
-
-
-# create(){
-# }
-# create&
-# pid1=$!
-# key(){
-#     sleep 4
-#     xdotool key Down
-#     xdotool key Down
-#     xdotool key Return
-# }
-# key&
-# pid2=$!
-# wait $pid1
-# wait $pid2
