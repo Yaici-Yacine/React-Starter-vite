@@ -1,3 +1,4 @@
+
 # React Starter vite 
 React Starter Vite is used to create a React project, remove all unwanted code, and start the project in VSCode.
 
@@ -32,3 +33,13 @@ or
 ```
 
 ## How to use
+```bash
+  #get info haw to use
+  react -h 
+  # create a projet react with javascript
+  react -j example
+  # create a projet react with typescript
+  react -t example
+  #create a projet react with typescript and insall depandasis
+  react -t example -i "sass axios ..."
+```
