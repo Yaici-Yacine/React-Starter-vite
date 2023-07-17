@@ -4,9 +4,7 @@ name=$2
 install=$3
 parametre=$4
 
-
 ouv(){
-    
     cd $name
     code .
     cd src
@@ -26,9 +24,7 @@ ouv(){
     pnpm install
 }
 
-
-ouvrir(){
-    ouv
+ouvrir(){  
     echo "import './App.css'
 
 export default function App() {
@@ -36,12 +32,11 @@ export default function App() {
         <div>App</div>
     )
 }">App.jsx
-
+    ouv
     # pnpm dev
 }
 
 ouvrirTs(){
-    ouv
     echo "import './App.css'
 
 export default function App() {
@@ -49,9 +44,9 @@ export default function App() {
         <div>App</div>
     )
 }">App.tsx
+    ouv
     # pnpm dev
 }
-
 
 case "$script" in
     "-h"|"--help") 
@@ -72,3 +67,4 @@ case "$script" in
     ouvrirTs
     ;;
 esac
+
