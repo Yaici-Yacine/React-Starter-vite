@@ -4,27 +4,44 @@ name=$2
 install=$3
 parametre=$4
 
-ouv(){
+open(){
     cd $name
     code .
     cd src
+}
+ouv(){
     echo "*,::after,::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }"> App.css
     rm index.css
-    if [ $install == "-i" ]; then
+    if [[ $install == "-i" ]]; then
         scss="scss"
         if echo "$packages" | grep -q "$sass";then
             mv App.css App.scss
+            echo "import './App.scss'
+
+export default function App() {
+    return (
+        <div>App</div>
+    )
+}">App.jsx
+        rename
         fi
         pnpm i $parametre
     fi
     pnpm install
 }
 
-ouvrir(){  
+rename(){
+    if [[ $script == "-t" ]]; then
+        mv App.jsx App.tsx
+    fi
+}
+
+ouvrir(){
+    open
     echo "import './App.css'
 
 export default function App() {
@@ -32,18 +49,7 @@ export default function App() {
         <div>App</div>
     )
 }">App.jsx
-    ouv
-    # pnpm dev
-}
-
-ouvrirTs(){
-    echo "import './App.css'
-
-export default function App() {
-    return (
-        <div>App</div>
-    )
-}">App.tsx
+    rename
     ouv
     # pnpm dev
 }
@@ -64,7 +70,6 @@ case "$script" in
     ;;
     -t)
     pnpm create vite $name --template react-ts
-    ouvrirTs
+    ouvrir
     ;;
 esac
-
