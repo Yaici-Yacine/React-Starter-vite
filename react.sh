@@ -1,13 +1,15 @@
 #!/bin/bash
-script=$1
-name=$2
-install=$3
-parametre=$4
+packagem=$1
+script=$2
+name=$3
+install=$4
+parametre=$5
 
 open(){
     cd $name
     code .
     cd src
+    mkdir components
 }
 ouv(){
     echo "*,::after,::before {
@@ -29,9 +31,9 @@ export default function App() {
 }">App.jsx
         rename
         fi
-        pnpm i $parametre
+        $1 i $parametre
     fi
-    pnpm install
+    $1 install
 }
 
 rename(){
@@ -50,26 +52,43 @@ export default function App() {
     )
 }">App.jsx
     rename
-    ouv
+    ouv $1
     # pnpm dev
 }
 
-case "$script" in
+langue(){
+    if [[ $script == "-t" ]]; then
+        echo "react-ts"
+    else
+        echo "react"
+    fi
+}
+l=$(langue)
+case "$packagem" in
     "-h"|"--help") 
-    echo -e "\033[34mreact\033[0m [options] name [option 2] "packages"
+    echo -e "\033[34mreact\033[0m [options] [options 2] name [option 3] "packages"
    options:
    -h --help  how it works
+     package manager:
+   -n         with npm
+   -p         with pnpm
+   -y         with yarn
+   options 2:
    \033[33m-j\033[0m         with JavaScript
    \033[34m-t\033[0m         with TypeScript
-   option 2:
+   option 3:
    \033[37m-i\033[0m         install packages"
     ;;
-    -j)
-    pnpm create vite $name --template react
-    ouvrir
+    -n)
+    npm create vite@latest $name -- --template $l
+    ouvrir npm
     ;;
-    -t)
-    pnpm create vite $name --template react-ts
-    ouvrir
+    -p)
+    pnpm create vite $name --template $l
+    ouvrir pnpm
+    ;;
+    -y)
+    yarn create vite $name --template $l
+    ouvrir yarn
     ;;
 esac
