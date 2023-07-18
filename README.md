@@ -2,11 +2,12 @@
 # React Starter vite 
 React Starter Vite is used to create a React project, remove all unwanted code, and start the project in VSCode.
 
+you can use `npm` or `yarn` or `pnpm`
 
 
 ## Installation
 
-first
+if you use `pnpm`
 
  - Install pnpm with 
 ```bash
@@ -37,9 +38,9 @@ or
   #get info how to use
   react -h 
   # create a project react with javascript
-  react -j example
+  react -n -j example
   # create a project react with typescript
-  react -t example
+  react -p -t example
   #create a project react with typescript and insall packages
-  react -t example -i "sass axios ..."
+  react -y -t example -i "sass axios ..."
 ```
