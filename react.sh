@@ -39,6 +39,9 @@ export default function App() {
 rename(){
     if [[ $script == "-t" ]]; then
         mv App.jsx App.tsx
+        sed -i '4d' main.tsx
+    else
+        sed -i '4d' main.jsx    
     fi
 }
 
