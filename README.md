@@ -2,7 +2,7 @@
 # React Starter vite 
 React Starter Vite is used to create a React project, remove all unwanted code, and start the project in VSCode.
 
-you can use `bun` or `npm` or `yarn` or `pnpm`
+you can use `bun` or `npm` or `pnpm` or `yarn`
 
 
 ## Installation
