@@ -73,6 +73,7 @@ case "$packagem" in
    options:
    -h --help  how it works
      package manager:
+   -b         with bun
    -n         with npm
    -p         with pnpm
    -y         with yarn
@@ -81,6 +82,10 @@ case "$packagem" in
    \033[34m-t\033[0m         with TypeScript
    option 3:
    \033[37m-i\033[0m         install packages"
+    ;;
+    -b)
+    bun create vite $name --template $l
+    ouvrir bun
     ;;
     -n)
     npm create vite@latest $name -- --template $l
