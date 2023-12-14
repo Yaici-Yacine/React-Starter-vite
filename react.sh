@@ -20,7 +20,7 @@ ouv(){
     rm index.css
     if [[ $install == "-i" ]]; then
         sass="sass"
-        if echo "$packages" | grep -q "$sass";then
+        if echo "$parametre" | grep -q "$sass";then
             mv App.css App.scss
             echo "import './App.scss'
 
